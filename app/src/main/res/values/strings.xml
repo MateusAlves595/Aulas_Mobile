@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Lion School</string>
+    <string name="courses">Courses</string>
+    <string name="course">Course</string>
+    <string name="student">Student</string>
+    <string name="select_a_course">Select a Course</string>
+    <string name="system_development">Systems Development</string>
+    <string name="network_technician">Network Technician</string>
+    <string name="status">Status</string>
+    <string name="studying">Studying</string>
+    <string name="finished">Finished</string>
+    <string name="registration">Registration</string>
+    <string name="gender">Gender</string>
+    <string name="subjects">Subjects</string>
+    <string name="sigla_ds" translatable="false">DS</string>
+    <string name="sigla_rds" translatable="false">RDS</string>
+    <string name="enter_the_registration">Enter the Student`s registration</string>
+    <string name="title_activity_tela_cursos" translatable="false">TelaCursos</string>
+    <string name="title_activity_main_activity" translatable="false">MainActivity</string>
+    <string name="title_activity_tela_alunos" translatable="false">TelaAlunos</string>
+    <string name="title_activity_tela_estatistica" translatable="false">TelaEstatistica</string>
+    <string name="title_activity_tela_pesquisa" translatable="false">TelaPesquisa</string>
+
+</resources>

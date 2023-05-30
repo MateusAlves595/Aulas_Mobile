@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Lion School</string>
+    <string name="courses">Cursos</string>
+    <string name="course">Curso</string>
+    <string name="student">Aluno</string>
+    <string name="select_a_course">Selecione um Curso</string>
+    <string name="system_development">Desenvolvimento de Sistemas</string>
+    <string name="network_technician">Técnico de Redes</string>
+    <string name="status">Status</string>
+    <string name="studying">Cursando</string>
+    <string name="finished">Finalizado</string>
+    <string name="registration">Matricula</string>
+    <string name="gender">Sexo</string>
+    <string name="subjects">Disciplinas</string>
+    <string name="enter_the_registration">Dígite a Matricula do Aluno</string>
+</resources>
