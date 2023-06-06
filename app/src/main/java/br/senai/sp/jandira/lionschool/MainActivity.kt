@@ -95,27 +95,7 @@ fun LoginScreen() {
                             fontWeight = FontWeight.Normal
                         )
                     }
-
-                    Spacer(modifier = Modifier.height(35.dp))
-
-                    Button(
-                        onClick = {null},
-                        modifier = Modifier
-                            .height(70.dp)
-                            .width(260.dp),
-                        colors = ButtonDefaults.buttonColors(Color(51, 71, 176)),
-                        shape = RoundedCornerShape(15.dp),
-                        border = BorderStroke(width = 3.dp, color = Color(255, 194, 61))
-                    ) {
-                        Text(
-                            text = stringResource(id = R.string.student),
-                            color = Color.White,
-                            fontSize = 30.sp,
-                            fontWeight = FontWeight.Normal
-                        )
-                    }
                 }
-
             }
         }
 }

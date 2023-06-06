@@ -3,15 +3,20 @@ package br.senai.sp.jandira.lionschool
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Divider
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -36,6 +41,12 @@ class TelaAlunos : ComponentActivity() {
 @Composable
 
 fun StudentScreen() {
+
+    val context = LocalContext.current
+
+    val listStudent by remember {
+        mutableStateOf(listOf<br.senai.sp.jandira.lionschool.model.Students>())
+    }
 
     Surface(
         modifier = Modifier.fillMaxSize()
@@ -94,12 +105,84 @@ fun StudentScreen() {
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(100.dp),
+                            .height(50.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Start
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.status),
+                            fontSize = 25.sp,
+                            color = colorResource(id = R.color.azul),
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier
+                                .padding(start = 20.dp, top = 15.dp)
+                        )
+                    }
+
+
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(60.dp),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Center
                     ) {
-                        Text(text = stringResource(id = ))
+
+                        Button(
+                            onClick = { /*TODO*/ },
+                            modifier = Modifier
+                                .width(150.dp)
+                                .height(50.dp),
+                            colors = ButtonDefaults.buttonColors(Color(51, 71, 176)),
+                            shape = RoundedCornerShape(15.dp),
+                            border = BorderStroke(width = 3.dp, color = Color(255, 194, 61))
+                        ) {
+                            Text(
+                                text = stringResource(id = R.string.studying),
+                                color = Color.White,
+                                fontSize = 20.sp
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.width(30.dp))
+
+                        Button(
+                            onClick = { /*TODO*/ },
+                            modifier = Modifier
+                                .width(150.dp)
+                                .height(50.dp),
+                            colors = ButtonDefaults.buttonColors(Color(51, 71, 176)),
+                            shape = RoundedCornerShape(15.dp),
+                            border = BorderStroke(width = 3.dp, color = Color(255, 194, 61))
+                        ) {
+                            Text(
+                                text = stringResource(id = R.string.finished),
+                                color = Color.White,
+                                fontSize = 20.sp
+                            )
+                        }
                     }
+
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .fillMaxHeight(),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Card(
+                            modifier = Modifier
+                                .width(330.dp)
+                                .height(120.dp)
+                                .padding(bottom = 10.dp),
+                            backgroundColor = colorResource(id = R.color.azul),
+                            shape = RoundedCornerShape(15.dp),
+                            border = BorderStroke(width = 3.dp, color = Color(255, 194, 61)),
+                        ) {
+
+                        }
+                    }
+
                 }
             }
     }

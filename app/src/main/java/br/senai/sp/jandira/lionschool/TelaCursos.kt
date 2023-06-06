@@ -1,10 +1,12 @@
 package br.senai.sp.jandira.lionschool
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -16,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -46,6 +49,8 @@ class TelaCursos : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun CoursesScreen() {
+
+    val context = LocalContext.current
 
     var listCourse by remember {
         mutableStateOf(listOf<br.senai.sp.jandira.lionschool.model.Courses>())
@@ -136,7 +141,13 @@ fun CoursesScreen() {
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .height(150.dp)
-                                .padding(bottom = 10.dp),
+                                .padding(bottom = 10.dp)
+                                .clickable {
+                                           var showStudents =
+                                               Intent(context, TelaAlunos::class.java)
+                                           showStudents.putExtra("sigla", it.sigla)
+                                           context.startActivity(showStudents)
+                                },
                             backgroundColor = colorResource(id = R.color.azul),
                             shape = RoundedCornerShape(15.dp),
                             border = BorderStroke(width = 3.dp, color = Color(255, 194, 61)),
@@ -182,8 +193,6 @@ fun CoursesScreen() {
                                     color = Color.White
                                 )
                             }
-
-
                         }
                     }
                 }
