@@ -1,12 +1,11 @@
 package br.senai.sp.jandira.lionschool.service
 
-import br.senai.sp.jandira.lionschool.model.StudentsList
-import retrofit2.http.GET
+import br.senai.sp.jandira.lionschool.model.StudentList
 import retrofit2.Call
+import retrofit2.http.GET
 
 interface StudentService {
 
-    @GET("alunos")
-    fun getStudents(): Call<StudentsList>
-
+    @GET("aluno")
+    fun getStudentByRegystration(): Call<StudentList>
 }

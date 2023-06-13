@@ -16,8 +16,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -121,7 +119,7 @@ fun CoursesScreen() {
                     verticalArrangement = Arrangement.Center
                 ) {
 
-                    var call = RetrofitFactory().getCourseService().getCourse()
+                    val call = RetrofitFactory().getCourseService().getCourse()
 
                     call.enqueue(object : Callback<CoursesList>{
                         override fun onResponse(
@@ -143,9 +141,10 @@ fun CoursesScreen() {
                                 .height(150.dp)
                                 .padding(bottom = 10.dp)
                                 .clickable {
-                                           var showStudents =
+                                           val showStudents =
                                                Intent(context, TelaAlunos::class.java)
                                            showStudents.putExtra("sigla", it.sigla)
+                                           showStudents.putExtra("nome", it.nome)
                                            context.startActivity(showStudents)
                                 },
                             backgroundColor = colorResource(id = R.color.azul),
