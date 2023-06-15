@@ -19,6 +19,11 @@
             android:label="@string/title_activity_tela_cursos"
             android:theme="@style/Theme.LionSchool" />
         <activity
+            android:name=".TelaAluno"
+            android:exported="false"
+            android:label="@string/title_activity_tela_aluno"
+            android:theme="@style/Theme.LionSchool" />
+        <activity
             android:name=".TelaAlunos"
             android:exported="false"
             android:label="@string/title_activity_tela_alunos"

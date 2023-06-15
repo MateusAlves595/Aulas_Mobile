@@ -1,5 +1,6 @@
 package br.senai.sp.jandira.lionschool
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -36,6 +37,7 @@ class MainActivity : ComponentActivity() {
 }
 
 
+@SuppressLint("SuspiciousIndentation")
 @Preview(showBackground = true)
 @Composable
 fun LoginScreen() {

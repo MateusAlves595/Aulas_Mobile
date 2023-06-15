@@ -20,5 +20,6 @@
     <string name="title_activity_tela_alunos" translatable="false">TelaAlunos</string>
     <string name="title_activity_tela_estatistica" translatable="false">TelaEstatistica</string>
     <string name="title_activity_tela_pesquisa" translatable="false">TelaPesquisa</string>
+    <string name="title_activity_tela_aluno" />
 
 </resources>

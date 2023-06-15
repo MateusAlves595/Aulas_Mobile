@@ -209,6 +209,7 @@ fun StudentScreen(curso : String, nomeCurso : String) {
                                                val showStudent =
                                                    Intent(context, TelaAluno::class.java)
                                                showStudent.putExtra("matricula", it.matricula)
+                                               showStudent.putExtra("nome", it.nome)
                                                context.startActivity(showStudent)
                                     }
                                 ,
