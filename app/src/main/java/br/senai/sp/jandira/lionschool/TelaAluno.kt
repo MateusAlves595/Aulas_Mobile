@@ -69,7 +69,7 @@ fun StudentInfoScreen(matricula : String, nome : String) {
 
     Column(
         modifier = Modifier
-            .fillMaxWidth(),
+            .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row(
@@ -84,17 +84,6 @@ fun StudentInfoScreen(matricula : String, nome : String) {
                 modifier = Modifier
                     .height(60.dp)
                     .width(100.dp)
-            )
-        }
-
-        Row(
-
-        ) {
-            Text(text = nome.uppercase(),
-                fontWeight = FontWeight.Bold,
-                fontSize = 15.sp,
-                textAlign = TextAlign.Center,
-                color = Color(51, 71, 176, 255)
             )
         }
 
@@ -149,60 +138,60 @@ fun StudentInfoScreen(matricula : String, nome : String) {
                 }
             }
         }
-    }
 
-    Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(15.dp))
 
-    Card(
-        modifier = Modifier
-            .size(width = 300.dp, height = 400.dp),
-        backgroundColor = Color(229, 228, 228, 255),
-        shape = RoundedCornerShape(10.dp),
-        border = BorderStroke(width = 3.dp, Color(255, 194, 61))
-    ) {
-        LazyColumn(
+        Card(
             modifier = Modifier
-                .fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+                .size(width = 300.dp, height = 400.dp),
+            backgroundColor = Color(229, 228, 228, 255),
+            shape = RoundedCornerShape(10.dp),
+            border = BorderStroke(width = 3.dp, Color(254, 193, 62, 255))
         ) {
-            items(studentNotes.disciplinas) {
-                Spacer(modifier = Modifier.height(8.dp))
-                Row(
-                    horizontalArrangement = Arrangement.Start
-                ) {
-                    Text(
-                        text = it.sigla,
-                        color = Color.White,
-                        fontSize = 16.sp,
-                        fontWeight = FontWeight.Bold
-                    )
-                    Spacer(modifier = Modifier.width(25.dp))
-                    Surface(
-
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                items(studentNotes.disciplinas) {
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Row(
+                        horizontalArrangement = Arrangement.Start
                     ) {
-                        Card(
-                            modifier = Modifier
-                                .height(10.dp)
-                                .width(100.dp),
-                            backgroundColor = Color.DarkGray
+                        Text(
+                            text = it.sigla,
+                            color = Color.White,
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Spacer(modifier = Modifier.width(25.dp))
+                        Surface(
+
                         ) {
+                            Card(
+                                modifier = Modifier
+                                    .height(10.dp)
+                                    .width(100.dp),
+                                backgroundColor = Color.Gray
+                            ) {
+                            }
+                            Card(
+                                modifier = Modifier
+                                    .height(10.dp)
+                                    .width(it.media.toDouble().dp),
+                                backgroundColor = Color(51, 71, 176, 255)
+                            ) {
+                            }
                         }
-                        Card(
-                            modifier = Modifier
-                                .height(10.dp)
-                                .width(it.media.toDouble().dp),
-                            backgroundColor = Color.Blue
-                        ) {
-                        }
+                        Spacer(modifier = Modifier.width(20.dp))
+                        Text(
+                            text = it.media,
+                            color = Color.White,
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Bold
+                        )
                     }
-                    Spacer(modifier = Modifier.width(20.dp))
-                    Text(
-                        text = it.media,
-                        color = Color.White,
-                        fontSize = 16.sp,
-                        fontWeight = FontWeight.Bold
-                    )
                 }
             }
         }
